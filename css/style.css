@@ -5,11 +5,107 @@
 /* Variables */
 
 :root{
+    /* Tema Oscuro (Predeterminado) */
+    --bg-body-dark: #00224D;
+    --primary-color-dark: #FF204E;
+    --secondary-color-dark: #fff;
+    --text-color-dark: #aab2bc;
+    --card-bg-dark: #292c36;
+
+    /* Tema Claro */
+    --bg-body-light: #f4f4f4;
+    --primary-color-light: #FF204E;
+    --secondary-color-light: #000;
+    --text-color-light: #333;
+    --card-bg-light: #ffffff;
+    
     --bg-body : #00224D;
     --primary-color : #FF204E;
     --secondary-color: #fff;
     --fontSize-title: 40px;
     --fontSize-parrafos: 20px;
+}
+
+body.light-theme {
+    background: var(--bg-body-light) !important;
+}
+
+body.light-theme h1, 
+body.light-theme h2, 
+body.light-theme h3, 
+body.light-theme h4, 
+body.light-theme h5, 
+body.light-theme h6 {
+    color: var(--secondary-color-light) !important;
+}
+
+body.light-theme p, 
+body.light-theme a, 
+body.light-theme li {
+    color: var(--text-color-light) !important;
+}
+
+body.light-theme #hero .cont-info p {
+    color: var(--text-color-light) !important;
+}
+
+body.light-theme #section2 {
+    background: var(--bg-body-light) !important;
+}
+
+body.light-theme #section2 .fila .card {
+    background-image: linear-gradient(135deg, #f0f0f0, #e0e0e0) !important;
+    color: var(--secondary-color-light);
+}
+
+body.light-theme footer {
+    background: #f0f0f0 !important;
+    color: var(--secondary-color-light);
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.theme-toggle-moon, 
+.theme-toggle-sun {
+    display: none;
+}
+
+body.light-theme .theme-toggle-moon {
+    display: inline;
+}
+
+body .theme-toggle-sun {
+    display: inline;
+}
+
+body.light-theme .theme-toggle-sun {
+    display: none;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .theme-toggle {
+        top: 5px;
+        right: 5px;
+        font-size: 18px;
+    }
 }
 
 h1,h2,h3,h4,h5,h6{
