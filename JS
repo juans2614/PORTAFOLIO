@@ -1,1 +1,21 @@
+// theme-toggle.js
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
 
+    // Verificar tema guardado
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    if (savedTheme) {
+        body.classList.add(savedTheme);
+    }
+
+    themeToggle.addEventListener('click', () => {
+        if (body.classList.contains('light-theme')) {
+            body.classList.remove('light-theme');
+            localStorage.removeItem('portfolio-theme');
+        } else {
+            body.classList.add('light-theme');
+            localStorage.setItem('portfolio-theme', 'light-theme');
+        }
+    });
+});
